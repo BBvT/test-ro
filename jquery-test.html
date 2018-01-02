@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Test Drive</title>
+<link href="css/jq-test-style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="main">
+<div class="test"><img src="images/hansi_hinterseer.gif" width="120" height="120" alt=""/></div>
+<div><img src="images/pasfoto-ns.jpg" width="108" height="72" alt=""/></div>
+
+</div>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script>
+ $(document).ready(function() {
+	$("div.test").click(function() {
+		$("div.test p").remove();
+		var discount	 = Math.floor((Math.random()*5) +5);
+		var discount_msg = "<p>Je korting is "+discount+"%</p>";
+		//alert (discount_msg);
+		$(this).append(discount_msg); 
+		$(this).unbind("click");
+	});
+});
+</script>
+</body>
+</html>

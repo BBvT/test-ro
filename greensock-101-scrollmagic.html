@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Greensock 101</title>
+<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+<style>
+body { font-family: 'PT Sans', sans-serif; }
+
+h1 { font-family: 'Rock Salt', sans-serif; }
+
+p,
+li { line-height: 1.75 }
+
+.container {
+	/*width: 400px;*/
+	margin: 0 auto;
+	padding: 3%;
+}
+
+img.plaatje {
+	width: 200px;
+	position: relative;
+	left: 33%
+}
+
+img.test {
+	width: 200px;
+	position: relative;
+	left: 33%
+}
+
+ul.menu {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background: red;
+	text-align: center
+}
+
+ul.menu li {
+	display: inline-block;
+	border-right: 2px solid #ccc;
+	padding: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+ul.menu li a {
+	color: white;
+	text-decoration: none;
+}
+
+ul.menu li a:hover { color: blue; }
+
+button {
+	width: 140px;
+	padding: 10px;
+	background-color: red;
+	font-size: 20px;
+	color: white;
+	border: none;
+	margin-right: 5%;
+}
+	.plaatje.fade-in {opacity: 1;}
+</style>
+</head>
+
+<body>
+
+<script>
+$(document).ready(function(){
+
+	// Init ScrollMagic
+	var controller = new ScrollMagic.Controller();
+
+	// build a scene
+	var ourScene = new ScrollMagic.Scene({
+		triggerElement: 'img.plaatje'
+	})
+	.setClassToggle('img.plaatje', 'fade-in') // add class to img.plaatje
+	.addIndicators({
+		name: 'fade scene',
+		colorTrigger: 'black',
+		indent: 200,
+		colorStart: '#75C695'
+	}) // this requires a plugin
+	.addTo(controller);
+
+});
+	</script>
+
+
+<nav>
+	<ul class="menu">
+		<li><a href="default.asp">Home</a></li>
+		<li><a href="news.asp">News</a></li>
+		<li><a href="contact.asp">Contact</a></li>
+		<li><a href="about.asp">About</a></li>
+	</ul>
+</nav>
+<div class="container">
+	<header id="header"> </header>
+	<h1 class="titel">BBvT on Greensock</h1>
+	<p>Lorem ipsum hatsjiekiedee how to target elements on the page using jQuery how to target them using pure JavaScript simple TweenLite</p>
+	<button id="play">play</button>
+	<button id="restart">back</button>
+	<br>
+	<br>
+	<h2>Contents</h2>
+	<p>How to target elements on the page using jQuery how to target them using pure JavaScript simple TweenLite</p>
+	<ul class="lijst-1">
+		<li>Item een</li>
+		<li>Item twee</li>
+		<li>Item drie</li>
+		<li>Item 4</li>
+	</ul>
+	<h2>Performance</h2>
+	<p>Performance is paramount, especially on mobile devices with sluggish processors. Silky smooth HTML5 javascript animation is the hallmark of any tweening engine worth its weight and GSAP outperforms old “industry standards” by literally 1000%+ under stress. What was jerky and twitchy is now fluid. It’s the result of countless optimizations made to ensure that your interactive projects are responsive, efficient, and buttery smooth. Check out the speed test for a head-to-head comparison.</p>
+	<h2>Performance</h2>
+	<p>Performance is paramount, especially on mobile devices with sluggish processors. Silky smooth HTML5 javascript animation is the hallmark of any tweening engine worth its weight and GSAP outperforms old “industry standards” by literally 1000%+ under stress. What was jerky and twitchy is now fluid. It’s the result of countless optimizations made to ensure that your interactive projects are responsive, efficient, and buttery smooth. Check out the speed test for a head-to-head comparison.</p>
+	<h2>Performance</h2>
+	<p>Performance is paramount, especially on mobile devices with sluggish processors. Silky smooth HTML5 javascript animation is the hallmark of any tweening engine worth its weight and GSAP outperforms old “industry standards” by literally 1000%+ under stress. What was jerky and twitchy is now fluid. It’s the result of countless optimizations made to ensure that your interactive projects are responsive, efficient, and buttery smooth. Check out the speed test for a head-to-head comparison.</p>
+	
+	
+	
+	
+	
+	
+	
+	
+	<img class="plaatje" src="http://www.upd-academy.nl/upd-academy.svg" />
+	<h2>Performance</h2>
+	<p>Performance is paramount, especially on mobile devices with sluggish processors. Silky smooth HTML5 javascript animation is the hallmark of any tweening engine worth its weight and GSAP outperforms old “industry standards” by literally 1000%+ under stress. What was jerky and twitchy is now fluid. It’s the result of countless optimizations made to ensure that your interactive projects are responsive, efficient, and buttery smooth. Check out the speed test for a head-to-head comparison.</p>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/easing/EasePack.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script> 
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+<script src="https://fastcdn.org/ScrollMagic/2.0.5/minified/plugins/animation.gsap.min.js"></script>
+
+</body>
+</html>

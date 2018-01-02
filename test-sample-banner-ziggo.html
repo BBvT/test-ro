@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- build:js:dcs https://s0.2mdn.net/ads/studio/Enabler.js -->
+
+    <!-- /build -->
+
+    <script>var clickTag = "https://www.ziggo.com";</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="js/ziggo-gsap-demo.js"></script>
+
+    <style>
+    body {
+        position: absolute;
+        -webkit-font-smoothing: antialiased !important;
+        cursor: pointer;
+    }
+
+    body,
+    div {
+        margin: 0;
+        padding: 0;
+    }
+
+    img,
+    #creative div {
+        position: absolute;
+    }
+
+    #banner {
+        width: 970px;
+        height: 250px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        -webkit-box-shadow: inset 0px 0px 0px 1px #34454E;
+        -moz-box-shadow: inset 0px 0px 0px 1px #34454E;
+        box-shadow: inset 0px 0px 0px 1px #34454E;
+    }
+
+    #creative {
+        width: 100%;
+        height: 100%;
+        background-color: #FFFFFF;
+        opacity: 1;
+        z-index: -10;
+        position: absolute;
+        opacity: 0;
+    }
+
+    #bg-exit {
+        width: 100%;
+        height: 100%;
+    }
+
+    #btn {
+        display: inline-block;
+        padding: 10px 15px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        color: white;
+        font-style:normal;
+        text-align: left;
+        text-decoration: none;
+        white-space: nowrap;
+        background-color: #000000;
+    }
+
+    .thin {
+        font-family:"diodrum_regular";
+    }
+
+    </style>
+<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+
+<body>
+    <div id="banner" class="border">
+        <div id="bg-exit">
+            <div id="creative" style="opacity: 1;"><div id="bg" class="srDynamic" style="width: 937px; height: 250px; position: absolute; display: inline-block; clear: both; left: 0px; top: 0px;"><img src="./bg-photo_970x250.jpg" width="936" height="249"></div><div id="guy" class="srDynamic" style="width: 233px; height: 231px; position: absolute; display: inline-block; clear: both; left: 120px; top: 19px; transform: matrix(1, 0, 0, 1, 0, 0);"><img src="./guy.png" width="233" height="231"></div><div id="orange_fractal" class="srDynamic" style="width: 668px; height: 250px; position: absolute; display: inline-block; clear: both; left: 302px; top: 0px;"><img src="./orange-fractals_970x250.png" width="668" height="250"></div><div id="h1d1" class="srDynamic" style="font-family: diodrum_semibold; color: rgb(255, 255, 255); font-size: 36px; position: absolute; display: inline-block; clear: both; left: 490px; top: -20px; opacity: 1; transform: matrix(0.93969, 0.34202, -0.34202, 0.93969, 0, -590); transform-origin: 1200px 0px 0px;">Je overstap</div><div id="h1d2" class="srDynamic" style="font-family: diodrum_semibold; color: rgb(255, 255, 255); font-size: 60px; position: absolute; display: inline-block; clear: both; left: 492px; top: 10px; opacity: 1; transform: matrix(0.93969, 0.34202, -0.34202, 0.93969, 0, -590); transform-origin: 1200px 0px 0px;">goed gefixt</div><div id="check1" class="srDynamic" style="width: 20px; height: 16px; position: absolute; display: inline-block; clear: both; left: 470px; top: 54px; opacity: 1; transform: matrix(0.93969, 0.34202, -0.34202, 0.93969, 0, -650); transform-origin: 1200px 0px 0px;"><img src="./uspLabel.png" width="20" height="15"></div><div id="check2" class="srDynamic" style="width: 20px; height: 16px; position: absolute; display: inline-block; clear: both; left: 472px; top: 119px; opacity: 1; transform: matrix(0.93969, 0.34202, -0.34202, 0.93969, 0, -650); transform-origin: 1200px 0px 0px;"><img src="./uspLabel.png" width="20" height="15"></div><div id="check3" class="srDynamic" style="width: 20px; height: 16px; position: absolute; display: inline-block; clear: both; left: 474px; top: 157px; opacity: 1; transform: matrix(0.93969, 0.34202, -0.34202, 0.93969, 0, -650); transform-origin: 1200px 0px 0px;"><img src="./uspLabel.png" width="20" height="15"></div><div id="usp1" class="srDynamic" style="font-family: diodrum_semibold; color: rgb(255, 255, 255); font-size: 24px; position: absolute; display: inline-block; clear: both; left: 505px; top: 40px; opacity: 1; transform: matrix(0.93969, 0.34202, -0.34202, 0.93969, 0, -650); transform-origin: 1200px 0px 0px;">Gratis monteur, <br><span class="thin">indien gewenst</span></div><div id="usp2" class="srDynamic" style="font-family: diodrum_semibold; color: rgb(255, 255, 255); font-size: 24px; position: absolute; display: inline-block; clear: both; left: 507px; top: 106px; opacity: 1; transform: matrix(0.93969, 0.34202, -0.34202, 0.93969, 0, -650); transform-origin: 1200px 0px 0px;">Gratis overstapservice</div><div id="usp3" class="srDynamic" style="font-family: diodrum_semibold; color: rgb(255, 255, 255); font-size: 24px; position: absolute; display: inline-block; clear: both; left: 509px; top: 142px; opacity: 1; transform: matrix(0.93969, 0.34202, -0.34202, 0.93969, 0, -650); transform-origin: 1200px 0px 0px;">Geen dag zonder tv,<br> internet en bellen</div><div id="h2d1" class="srDynamic" style="font-family: diodrum_semibold; color: rgb(255, 255, 255); font-size: 30px; position: absolute; display: inline-block; clear: both; left: 450px; top: -40px; opacity: 1; transform: matrix(0.99862, -0.05233, 0.05233, 0.99862, 0, 10); transform-origin: 1200px 0px 0px;">Dus stap gerust</div><div id="h2d2" class="srDynamic" style="font-family: diodrum_semibold; color: rgb(255, 255, 255); font-size: 30px; position: absolute; display: inline-block; clear: both; left: 452px; top: -9px; opacity: 1; transform: matrix(0.99862, -0.05233, 0.05233, 0.99862, 0, 10); transform-origin: 1200px 0px 0px;">over op</div><div id="h2d3" class="srDynamic" style="font-family: diodrum_semibold; color: rgb(255, 255, 255); font-size: 30px; position: absolute; display: inline-block; clear: both; left: 454px; top: 24px; opacity: 1; transform: matrix(0.99862, -0.05233, 0.05233, 0.99862, 0, 10); transform-origin: 1200px 0px 0px;">Ziggo Alles-in-1</div><div id="fractal" class="srDynamic" style="width: 178px; height: 146px; position: absolute; display: inline-block; clear: both; left: 703px; top: 31px; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><img src="./fractal-3mnd.png" width="178" height="137"></div><div id="logoLbl" class="srDynamic" style="width: 122px; height: 68px; position: absolute; display: inline-block; clear: both; left: 848px; top: 182px;"><img src="./logoLabel.png" width="121" height="68"></div><div id="logo" class="srDynamic" style="width: 78px; height: 28px; position: absolute; display: inline-block; clear: both; left: 877px; top: 207px;"><img src="./ziggo-logo.png" width="78" height="27"></div><div id="btn" class="srDynamic" style="font-family: diodrum_semibold; font-size: 17px; position: absolute; display: inline-block; clear: both; left: 470px; top: 163px; transform: matrix(1, 0, 0, 1, 0, 0); transform-origin: 50% 50% 0px;">Bekijk de deal</div></div>
+        </div>
+    </div>
+</body>
+</html>
